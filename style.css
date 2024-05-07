@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+/* Reset styles */
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+}
+
+.nav-hidden {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+
+.nav-container {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-right: 30px;
+  padding-left: 20px;
+  height: 80px;
+  color: #fff;
+  z-index: 1000;
+}
+
+.nav-container ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  font-size: 15px;
+}
+
+.nav-container ul li {
+  cursor: pointer;
+  transition: 0.5s;
+  padding: 3px 10px;
+  border-radius: 5px;
+  color: black;
+}
+
+.nav-container ul li:hover,
+.nav-container .icons i:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+  width: 120px;
+  height: 30px;
+  cursor: pointer;
+  filter: brightness(0) invert(1);
+  color: black;
+}
+
+.nav-container .icons {
+  display: flex;
+  font-size: 25px;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.nav-container .icons i {
+  border-radius: 50%;
+  padding: 3px;
+  transition: 0.5s;
+  color: black;
+}
+
+.pages {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  text-align: center;
+  flex-direction: column;
+}
+
+.pages li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  justify-content: space-between;
+  padding-top: 100px; /* Adjust this value to move the image information upward */
+  padding-bottom: 10px;
+  color: #fff;
+  scroll-snap-align: start;
+}
+
+.pages li video,
+.pages li img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.page-info h1 {
+  letter-spacing: 1px;
+  font-size: 40px;
+}
+
+.page-info h1,
+.page-info h3 {
+  font-weight: 500;
+  color: black;
+}
+
+.page-info.model-x {
+  color: #333;
+}
+
+.page-info.model-x p {
+  font-size: 12px;
+  color: black;
+}
+
+.page-footer .buttons {
+  margin-bottom: 25px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.page-footer .buttons button {
+  font-size: 13px;
+  padding: 7px 80px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.page-footer .buttons button:first-child {
+  background-color: rgba(34, 34, 34, 0.8);
+  color: #fff;
+}
+
+.page-footer .buttons button:last-child {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.page-footer .buttons.inverted button:first-child {
+  background-color: rgba(255, 255, 255, 0.75);
+  color: #333;
+}
+
+.page-footer .buttons.inverted button:last-child {
+  background-color: rgba(34, 34, 34, 0.8);
+  color: #fff;
+}
+
+.page-footer p,
+.page-footer a {
+  font-size: 12px;
+  color: #fff;
+}
+
+.page-footer .buttons.demo-drive button {
+  background-color: transparent;
+  color: #fff;
+  border: 3px solid #fff;
+}
+
+footer {
+  text-align: center; /* Center-align text */
+}
+
+footer p {
+  margin: 0; /* Remove default margin */
+}
+
+#model-y-info,
+#model-y-footer {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 3s;
+}
+
+/* Media queries for responsiveness */
+
+@media only screen and (max-width: 768px) {
+  .nav-container {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .nav-container ul {
+    gap: 10px;
+  }
+
+  .nav-container ul li {
+    padding: 3px 5px;
+  }
+
+  .nav-container .icons {
+    font-size: 20px;
+    gap: 5px;
+  }
+
+  .pages li {
+    padding-top: 80px;
+  }
+
+  .page-info h1 {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .nav-container ul li {
+    font-size: 13px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 25px;
+  }
+
+  .nav-container .icons {
+    font-size: 18px;
+  }
+
+  .pages li {
+    padding-top: 60px;
+  }
+
+  .page-info h1 {
+    font-size: 24px;
+  }
+
+  .page-info h3 {
+    font-size: 16px;
+  }
+
+  .page-footer .buttons button {
+    padding: 5px 30px;
+    font-size: 11px;
+  }
+}
